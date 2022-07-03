@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>personal info</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'S2/personalinfo.css' %}">
+</head>
+<body>
+    <div class="abc">
+    <h1>Personal Information</h1>
+    <form action="pinfo/" method="post">
+    {% csrf_token %}
+    <fieldset style="width:600px;">
+    <!--<table border="1" align="center">-->
+        <table style="height:200px;width:600px;">
+        <tr>
+            <td width="300px">
+                <label for="rno">Roll Number:</label>
+            </td>
+            <td>
+                <input type="text" id="rno" name="rno"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="first">First Name:</label>
+            </td>
+            <td>
+                <input type="text" id="first" name="first"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="last">Last Name:</label>
+            </td>
+            <td>
+                <input type="text" id="last" name="last"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="fname">Father Name:</label>
+            </td>
+            <td>
+                <input type="text" id="fname" name="fname"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="mname">Mother Name:</label>
+            </td>
+            <td>
+                <input type="text" id="mname" name="mname"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="cno">Contact No:</label>
+            </td>
+            <td>
+                <input type="number" id="cno" name="cno"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="eml">Email:</label>
+            </td>
+            <td>
+                <input type="email" id="eml" name="eml"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="addr">Address:</label>
+            </td>
+            <td>
+                <input type="text" id="addr" name="addr"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="gn">Gender</label>
+            </td>
+            <td>
+                <input type="text" id="gn" name="gn"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="dob">Date of Birth:</label>
+            </td>
+            <td>
+                <input type="date" id="dob" name="dob"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        
+        <tr>
+            
+              
+        <td colspan="2" width="300px">
+        <input type="submit" name="submit" value="submit" style="height: 30px; width:200px">
+        </td>
+        <tr>
+        </table>
+        <div class="content">
+            {% for msg in messages %} 
+            {{ msg }}
+            {% endfor %}
+            <!--script>
+                setTimeout(function(){
+                  if ($('#msg').length > 0) {
+                    $('#msg').remove();
+                  }
+                }, 200)
+              </script--> 
+        </div>
+        
+    </form>
+    </div>
+   
+      
+</body>
+</html>

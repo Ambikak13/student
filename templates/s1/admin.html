@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'S2/admin.css' %}">
+</head>
+<body>
+   <div class="menu-bar">
+    <ul>
+        <li class="active"><a href="#">HOME</a></li>
+        <li><a href="#">Add students</a>
+            <div class="sub-menu-1">
+                <ul>
+                    <li><a href="/some/add/">Insert</a><i class="fa fa-angle-right"></i></li>
+                    <li><a href="#">Retrieve database</a><i class="fa fa-angle-right"></i></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#">Add Academic Advisor</a>
+        </li>
+        <li><a href="#">Scholership</a>
+        </li>
+        <li><a href="#">Mid-day Meals</a>
+        </li>
+        <li><a href="#">Fees</a>
+        </li>
+        <li><a href="#">Time-table</a>
+        </li>
+        <li><a href="#">All access</a>
+        </li>
+        <li><a href="/some/id">Logout</a></li>
+    </ul>
+    </div>  
+</body>
+</html>

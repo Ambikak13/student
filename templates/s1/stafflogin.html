@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>STAFF LOGIN</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'S2/stafflogin.css' %}">
+    
+</head>
+<body>
+    <div class="abc">
+        <h1>STAFF LOGIN</h1><br><br>
+        <form name="myform" method="post">
+            <label for="uname">User name</label>
+            <input type="email" id="email" name="email" placeholder="Please enter username" style="height: 30px; width:200px" required><br><br>
+            <label for="pwd" >Password</label>
+            <input type="password" id="pwd" name="Password" placeholder="Please enter passward" style="height: 30px; width:200px" required><br><br>
+            <input type="button" name="log" id="logbutton" value="login" style="height: 30px; width: 110px;" onclick="myfunction()"></button><br>
+            <a href="/some">Home</a>
+        </form>
+    </div>
+</body>
+</html>
