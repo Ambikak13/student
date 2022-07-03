@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adding students</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'S2/addstudent.css' %}">
+</head>
+<body>
+    <div class="abc">
+    <h1>Add students</h1>
+    <form action="addrecord/" method="post">
+    {% csrf_token %}
+    <fieldset style="width:600px;">
+    <!--<table border="1" align="center">-->
+        <table>
+        <tr>
+            <td width="300px">
+                <label for="rno">Roll Number:</label>
+            </td>
+            <td>
+                <input type="text" id="rno" name="rno"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="first">First Name:</label>
+            </td>
+            <td>
+                <input type="text" id="first" name="first"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="last">Last Name:</label>
+            </td>
+            <td>
+                <input type="text" id="last" name="last"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="clss">Student class</label>
+            </td>
+            <td>
+                <input type="text" id="clss" name="clss"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+            <td width="300px">
+                <label for="sec">Section</label>
+            </td>
+            <td>
+                <input type="text" id="sec" name="sec"  style="height: 30px; width:300px" required>
+            </td>
+        </tr>
+        <tr>
+        <td colspan="2" width="300px">
+            <input type="submit" name="submit" value="submit" style="height: 30px; width:200px">
+        </td>
+        <tr>
+        </table>
+    </form>
+    </div>
+</body>
+</html>
