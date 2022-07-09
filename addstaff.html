@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Staff</title>
+</head>
+<body>
+    <section class="content">
+        <div class="row">
+            <h3 class="title">Add Staff</h3>
+        </div>
+    </section>
+    <form action="/some/add_staff_save" method="post">
+    {% csrf_token %}
+        <div class="id">
+            <label>Staff Id</label>
+            <input type="text" name="staff_id" placeholder="staff id">
+        </div>
+        <div class="name">
+            <label>Staff Name</label>
+            <input type="text" name="staff_name" placeholder="staff name">
+        </div>
+        <div class="cs">
+            <td>
+            <label>Course</label>
+            </td>
+            <td width="300px">
+                <select class="form" name="course">
+                    {% for course in course %}
+                        <option value="{{ course.course_id }}">{{ course.Name}}</option>
+                    {% endfor %}
+                </select>
+            </td>
+        </div>
+        
+        <div class="btn">
+            <button type="submit" >Add Staff</button>
+        </div>
+        <div>
+            {% if msg %}
+                {% for msg in messages %}
+                <div class="alert" style="margin-top:10px">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        
+    </form>
+</body>
+</html>

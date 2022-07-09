@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take attendance</title><!DOCTYPE html>
+    <html lang="en">
+</head>
+<body>
+        <section class="content">
+            <div class="row">
+                <h3 class="title">Take attendance</h3>
+            </div>
+        </section>
+        <form action="attendance_save" method="post">
+        {% csrf_token %}
+            <div class="id">
+            <tr>
+                <td width="300px">
+                <label>Student Name</label>
+                </td>
+                <td width="300px">
+                <select class="form" name="student">
+                    {% for student in student %}
+                        <option value="{{ student.rno }}">{{ student.rno }}</option>
+                    {% endfor %}
+                </select>
+                </td>
+            </tr>
+            
+            <div class="id">
+                <tr>
+                    <td width="300px">
+                    <label>Subject</label>
+                    </td>
+                    <td width="300px">
+                    <select class="form" name="subject">
+                        {% for subject in subject %}
+                            <option value="{{ subject.subject_id }}">{{ subject.subject}}</option>
+                        {% endfor %}
+                    </select>
+                    </td>
+                </tr>
+            </div>
+            <tr>
+                <td width="300px">
+                    <label>Class held</label>
+                </td>
+                <td width="300px">
+                    <input type="text" name="cheld" width="300px">
+                </td>
+            </tr>
+            <div class="id">
+                <tr>
+                    <td width="300px">
+                    <label>Class attendend</label>
+                    </td>
+                    <td width="300px">
+                    <input type="text" name="cattend" width="300px">
+                    </td>
+                </tr>
+            </div>
+            <div class="id">
+                <tr>
+                    <td width="300px">
+                    <label>From</label>
+                    </td>
+                    <td width="300px">
+                    <input type="date" name="from" width="300px">
+                    </td>
+                </tr>
+            </div>
+            <div class="id">
+                <tr>
+                    <td width="300px">
+                    <label>To</label>
+                    </td>
+                    <td width="300px">
+                    <input type="date" name="to" width="300px">
+                    </td>
+                </tr>
+            </div>
+            <div class="btn">
+                <button type="submit" >Add Attendance</button>
+            </div>
+
+            <div>
+                {% if msg %}
+                    {% for msg in messages %}
+                    <div class="alert" style="margin-top:10px">{{ msg }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+        </form>
+    </body>
+    </html>
+</head>
+<body>
+    
+</body>
+</html>

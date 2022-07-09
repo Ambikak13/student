@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Class</title>
+</head>
+<body>
+    <section class="content">
+        <div class="row">
+            <h3 class="title">Add Class</h3>
+        </div>
+    </section>
+    <form action="/some/add_class_save" method="post">
+    {% csrf_token %}
+        <div class="id">
+            <label>Clss Id</label>
+            <input type="text" name="class_id" placeholder="class id">
+        </div>
+        <div class="nm">
+            <label>Class name</label>
+            <input type="text" name="name" placeholder="class name">
+        </div>
+        <div class="btn">
+            <button type="submit" >Add class</button>
+        </div>
+        <div>
+            {% if msg %}
+                {% for msg in messages %}
+                <div class="alert" style="margin-top:10px">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        
+    </form>
+</body>
+</html>
